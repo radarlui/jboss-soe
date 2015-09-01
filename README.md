@@ -1,18 +1,19 @@
 EAP6 Standalone SOE
 ===================
 
-if you want to get started quickly ... Simply issue the following command in a pristine VM for testing purposes
+if you want to get started quickly ... Simply issue the following command in the directory tools/
 
-    curl -L http://bit.ly/jboss-soe | bash
+    setup_demo_environment.sh 
 
-if you want to find out more what is going to happen after issuing this command, you should watch the
-introduction video https://vimeo.com/60582511
+Unzip downloaded jboss-eap-6.4.0.zip to /tmp/soe-work/jboss-soe and rename to /tmp/soe-work/jboss-soe/jboss-eap6-master
 
-This is my attempt to create an EAP6 based SOE that can work with a master Revision in SVN on-site and
-the EAP6 RPM Channel, that is available through our Customer Portal. The Customer can decide from which source
-he wants to operate.
+then execute the following command in the directory /tmp/soe-work/jboss-soe/build/
+    runbuild.sh build-all
 
-This Repository contains EAP 6.0.0 as a master Revision. I mainly use it for testing that alle the packaging works as
+This is my attempt to create an EAP6 based SOE 
+with the zip installation that is available through our Customer Portal. 
+
+This Repository contains EAP 6.4.0 as a master Revision. I mainly use it for testing that all the packaging works as
 expected.
 
 Below you find the default Directory Layout of the Build Environment. I have provided a README in each of the directories.
@@ -36,10 +37,23 @@ This Directory contains a general README with instructions on how to use the fil
 
 jboss-eap6-master
 ----------------
-Self explanatory... This is the JBoss EAP 6.0.0 Master Revision. This Repository is only used to build the base RPM
+Self explanatory... This is the JBoss EAP 6.4.0 Master Revision. This Repository is only used to build the base RPM
 Package, and provides the default standalone.xml, standalone-ha.xml, standalone-full.xml, standalone-full-ha.xml. This
 has to be downloaded and extracted from the Customer Support Portal (http://access.redhat.com). And you need a valid
  subscription for it.
+Download jboss-eap-6.4.0.zip and unzip it to this directory and ls -la jboss-eap6-master prints
+-rw-rw-r--@  1 buddy  staff     425 20 Nov 15:54 JBossEULA.txt
+-rw-rw-r--@  1 buddy  staff   26530 20 Nov 15:54 LICENSE.txt
+drwxrwxr-x@  3 buddy  staff     102 20 Nov 15:54 appclient
+drwxrwxr-x@ 35 buddy  staff    1190 20 Dez 13:16 bin
+drwxrwxr-x@  4 buddy  staff     136 20 Nov 15:54 bundles
+drwxrwxr-x@  5 buddy  staff     170 20 Nov 15:54 docs
+drwxrwxr-x@  6 buddy  staff     204 18 Jan 12:13 domain
+-rw-rw-r--@  1 buddy  staff  267443 20 Nov 15:54 jboss-modules.jar
+drwxrwxr-x@ 14 buddy  staff     476 20 Nov 15:54 modules
+drwxrwxr-x@  8 buddy  staff     272 17 Jan 13:41 standalone
+-rw-rw-r--@  1 buddy  staff      58 20 Nov 15:54 version.txt
+drwxrwxr-x@ 10 buddy  staff     340 20 Dez 13:16 welcome-content
 
 tools
 -----
