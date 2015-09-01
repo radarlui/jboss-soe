@@ -87,10 +87,16 @@
             <then>
                 <echo>Checking out into: ${build.checkout.dir}/${master.revision.name}</echo>
                 <!--suppress AntResolveInspection -->
+		<!--
                 <svn refid="svn.settings">
                     <export srcUrl="${svn.repo.url}/jboss-eap6-master" destPath="${build.checkout.dir}/${master.revision.name}"
                             force="Yes" revision="HEAD"/>
                 </svn>
+                -->
+                <copy todir="${build.checkout.dir}/${master.revision.name}">
+                    <fileset dir="${build.work.dir}/jboss-eap6-master"/>
+                </copy>
+
             </then>
             <else>
                 <antcall target="yumdownloader" inheritall="true" inheritrefs="true" />
